@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: showcase-web
+  profiles:
+    active: dev
+  messages:
+    basename: messages_zh_CN
+  datasource:
+    name: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/showcase?useUnicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false
+    username: conlay
+    password: conlay
+
+server:
+  context-path: /
+  port: 8080
+
+logging:
+  file: ${user.home}/webapp-logs/showcase/showcase-web.log
+  level.root: INFO
+  level.org.eclipse.jetty: warn
