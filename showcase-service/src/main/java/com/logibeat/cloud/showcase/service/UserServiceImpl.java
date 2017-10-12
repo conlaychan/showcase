@@ -1,8 +1,7 @@
 package com.logibeat.cloud.showcase.service;
 
-import com.logibeat.cloud.common.constant.DateTimePattern;
 import com.logibeat.cloud.common.model.DateRange;
-import com.logibeat.cloud.common.utils.DateTimeUtil;
+import com.logibeat.cloud.common.utils.DateTimes;
 import com.logibeat.cloud.showcase.criteria.UserCriteria;
 import com.logibeat.cloud.showcase.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Object test() {
-        Date start = DateTimeUtil.parse("2017-01-01", DateTimePattern.COMMON_DATE);
-        Date end = DateTimeUtil.parse("2018-01-01", DateTimePattern.COMMON_DATE);
+        Date start = DateTimes.COMMON_DATE.parse("2017-01-01");
+        Date end = DateTimes.COMMON_DATE.parse("2018-01-01");
         UserCriteria criteria = new UserCriteria();
         DateRange range = DateRange.closedOpen(start, end);
         criteria.setUpdateRange(range);
