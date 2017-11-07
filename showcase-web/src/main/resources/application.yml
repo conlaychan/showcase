@@ -11,12 +11,15 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/showcase?useUnicode=true&characterEncoding=UTF8&autoReconnect=true&useSSL=false
     username: conlay
     password: conlay
+    hikari:
+      maximum-pool-size: 30  # 连接池上限
+      minimum-idle: 10       # 连接池下限
 
 server:
   context-path: /
   port: 8080
 
 logging:
-  file: ${user.home}/webapp-logs/showcase/showcase-web.log
+  file: ${user.home}/webapp-logs/showcase/${spring.application.name}.log
   level.root: INFO
   level.org.eclipse.jetty: warn
