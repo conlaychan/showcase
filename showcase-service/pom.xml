@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.logibeat.cloud.boot</groupId>
             <artifactId>logibeat-boot-starter-mybatis</artifactId>
-            <version>1.0-RELEASE</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>
